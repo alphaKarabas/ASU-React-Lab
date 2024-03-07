@@ -10,13 +10,11 @@ function SideBar({ isOpen, toggleDrawer }) {
       onClose={toggleDrawer(false)}
     >
       <List>
-        {/* Список ссылок */}
         <ListItem disablePadding>
           <ListItemButton component={Link} to="/Lab_2">
             <ListItemText primary="Lab 2" />
           </ListItemButton>
         </ListItem>
-        {/* Добавьте дополнительные ссылки по аналогии */}
       </List>
     </Drawer>
   );

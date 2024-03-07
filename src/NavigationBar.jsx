@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { AppBar, Toolbar, Typography, IconButton, Button } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import SideBar from "./SideBar"; // Импортируйте SideBar
+import SideBar from "./SideBar";
 
 function NavigationBar() {
   const [isSideBarOpen, setSideBarOpen] = useState(false);
@@ -23,7 +23,7 @@ function NavigationBar() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
-            onClick={toggleDrawer(true)} // Открывает SideBar
+            onClick={toggleDrawer(true)}
           >
             <MenuIcon />
           </IconButton>
