@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { CssBaseline, Container, Box } from '@mui/material';
-import MainPage from './components/MainPage';
-import HomePage from './components/HomePage';
-import AboutPage from './components/AboutPage';
+import MainPage from './pages/MainPage';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
 import Lab_4 from './Labs/Lab_4';
 import Lab_5_6 from './Labs/Lab_5-6';
 import NavigationComponent from './components/NavigationBar';

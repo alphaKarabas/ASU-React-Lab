@@ -1,5 +1,5 @@
 import React from 'react';
-import ContainerComponent from './ContainerComponent';
+import ContainerComponent from '../components/ContainerComponent';
 
 const HomePage = () => (
   <ContainerComponent >
