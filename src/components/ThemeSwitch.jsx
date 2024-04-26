@@ -9,7 +9,7 @@ const ThemeSwitch = (props) => {
   const isDarkMode = theme === 'dark';
 
   const iconStyle = {
-    color: 'rgba(0, 0, 0, 0.6)',
+    color: isDarkMode ? 'rgba(0, 0, 0, 0.6)' : 'rgb(250, 175, 0)',
     backgroundColor: '#fff',
     borderRadius: '50%',
     padding: '2px',

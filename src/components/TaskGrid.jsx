@@ -7,7 +7,6 @@ const Item = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(4),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    height: '250px',
 }));
 
 const TaskGrid = ({ children }) => {

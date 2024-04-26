@@ -24,7 +24,7 @@ function SideBar({ isOpen, toggleDrawer }) {
         </Typography>
       </Toolbar>
       <List>
-        {['Lab 2', 'Lab 4'].map((text, index) => (
+        {['Lab 2', 'Lab 4', 'Lab 5-6'].map((text, index) => (
           <ListItem key={text} disablePadding onClick={toggleDrawer(false)}>
             <ListItemButton component={Link} to={`/${text.replace(' ', '_')}`}>
               <ListItemText primary={text} />

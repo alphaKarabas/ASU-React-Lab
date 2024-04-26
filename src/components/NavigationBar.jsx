@@ -4,6 +4,7 @@ import { AppBar, Toolbar, Typography, IconButton, Button } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import SideBar from "./SideBar";
 import ThemeSwitch from "./ThemeSwitch";
+import UserMenu from "./UserMenu";
 
 function NavigationBar() {
   const [isSideBarOpen, setSideBarOpen] = useState(false);
@@ -33,6 +34,7 @@ function NavigationBar() {
               React labs
             </Link>
           </Typography>
+          <UserMenu />
           <ThemeSwitch sx={{ mr: 2 }}/>
           <Button color="inherit" component={Link} to="/home">Home</Button>
           <Button color="inherit" component={Link} to="/about">About</Button>
