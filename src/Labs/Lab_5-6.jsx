@@ -18,13 +18,15 @@ export default function Lab_5() {
 
     return (
         <>
-            <LabTitle title='LAB 5' />
+            <LabTitle title='Формы' />
             <TaskSection title='Реализовать форму регистрации или форму обратной связи с помощью React-hook-forms или Formik. Обработать submit через useCallback функции.'>
                 <TaskGrid>
                     <RegistrationForm />
                     <LoginForm />
                     <CommentForm />
                 </TaskGrid>
+            </TaskSection>
+            <TaskSection title='Комментарии пользователя'>
                 <Comments />
             </TaskSection>
         </>

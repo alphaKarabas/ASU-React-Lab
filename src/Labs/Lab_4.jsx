@@ -21,7 +21,7 @@ export default function Lab_4() {
 
     return (
         <>
-            <LabTitle title='LAB 4' />
+            <LabTitle title='Примеры хуков' />
             <TaskSection title='useState и useEffect - простые примеры'>
                 <TaskGrid>
                     <Container>

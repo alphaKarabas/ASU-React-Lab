@@ -1,14 +1,19 @@
 import React from 'react';
-import ContainerComponent from './ContainerComponent';
-import ButtonComponent from './ButtonComponent';
+import { Container, CssBaseline, Typography } from '@mui/material';
+import LabLinks from '../components/LabLinks';
 
-const MainPage = () => (
-    <>
-        <ContainerComponent>
-            <h1>Добро пожаловать!</h1>
-            <ButtonComponent>Hello World!</ButtonComponent>
-        </ContainerComponent>
-    </>
-);
+function MainPage() {
+    return (
+        <React.Fragment>
+            <CssBaseline />
+            <Container maxWidth="lg" style={{ marginTop: '20px' }}>
+                <Typography variant="h4" component="h1" gutterBottom>
+                    Быстрые ссылки
+                </Typography>
+                <LabLinks />
+            </Container>
+        </React.Fragment>
+    );
+}
 
 export default MainPage;
