@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AppBar, Toolbar, Typography, IconButton, Button } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import SideBar from "./SideBar";
+import ThemeSwitch from "./ThemeSwitch";
 
 function NavigationBar() {
   const [isSideBarOpen, setSideBarOpen] = useState(false);
@@ -29,9 +30,10 @@ function NavigationBar() {
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-              NavBar Title
+              React labs
             </Link>
           </Typography>
+          <ThemeSwitch sx={{ mr: 2 }}/>
           <Button color="inherit" component={Link} to="/home">Home</Button>
           <Button color="inherit" component={Link} to="/about">About</Button>
         </Toolbar>
