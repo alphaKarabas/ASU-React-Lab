@@ -3,20 +3,24 @@ import { Grid, Card, CardContent, Typography, CardMedia } from '@mui/material';
 import { Link } from 'react-router-dom';
 import darkHooksImage from '../../images/dark_hooks.png';
 import darkFormsImage from '../../images/dark_forms.png';
+import darkTableImage from '../../images/dark_table.png';
 import lightHooksImage from '../../images/light_hooks.png';
 import lightFormsImage from '../../images/light_forms.png';
+import lightTableImage from '../../images/light_table.png';
 import { useTheme } from '../components/CustomThemeProvider';
 
 function LabLinks() {
     const { theme } = useTheme();
     const lightCards = [
         { title: "Примеры хуков", image: lightHooksImage, link: "/Lab_4" },
-        { title: "Формы", image: lightFormsImage, link: "/Lab_5-6" }
+        { title: "Формы", image: lightFormsImage, link: "/Lab_5-6" },
+        { title: "Таблица", image: lightTableImage, link: "/Lab_8" },
     ];
 
     const darkCards = [
         { title: "Примеры хуков", image: darkHooksImage, link: "/Lab_4" },
-        { title: "Формы", image: darkFormsImage, link: "/Lab_5-6" }
+        { title: "Формы", image: darkFormsImage, link: "/Lab_5-6" },
+        { title: "Таблица", image: darkTableImage, link: "/Lab_8" },
     ];
 
     return (

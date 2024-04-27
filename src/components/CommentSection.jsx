@@ -1,14 +1,28 @@
+import { useState, useEffect } from "react";
 import { Alert, Box } from '@mui/material';
 import CommentsTable from './CommentsTable';
 import { useGetCommentsQuery } from '../store/CommentsApi';
+import { useSelector } from 'react-redux';
 
 const CommentSection = () => {
+  const isAuth = useSelector((state) => state.UserSlice.isAuth);
+  const currentUser = useSelector((state) => state.UserSlice.currentUser);
+
   const {
-    data = {},
+    data = [],
     isFetching,
     isError,
     error,
-  } = useGetCommentsQuery();
+    refetch,
+  } = useGetCommentsQuery(undefined, {
+    skip: !isAuth,
+  });
+
+  useEffect(() => {
+    if (isAuth) {
+      refetch();
+    }
+  }, [currentUser]);
 
   return (
     <Box padding={6}>

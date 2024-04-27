@@ -5,23 +5,9 @@ import {
   TableRow,
   TableCell,
   TableBody,
-  styled
 } from "@mui/material";
 import { useState, useRef, memo, useMemo } from "react";
 import { useVirtualizer } from '@tanstack/react-virtual';
-
-const StyledTableRow = styled(TableRow)`
-  &:nth-of-type(odd) {
-    background-color: #f1f1f1;
-  }
-  &:last-child td,
-  &:last-child th {
-    border: 0;
-  }
-  :hover {
-    background-color: #d9d9d9;
-  }
-`;
 
 export const columns = [
   {
@@ -37,6 +23,8 @@ export const columns = [
 const Table = ({
   data,
 }) => {
+
+
   const parentRef = useRef();
   const [sortConfig, setSortConfig] = useState(null);
 
@@ -86,7 +74,7 @@ const Table = ({
           </TableHead>
           <TableBody>
             {rowVirtualizer.getVirtualItems().map(virtualRow => (
-              <StyledTableRow
+              <TableRow
                 key={virtualRow.index}
                 style={{
                   top: 0,
@@ -99,7 +87,7 @@ const Table = ({
                     {sortedData[virtualRow.index][column.accessorKey]}
                   </TableCell>
                 ))}
-              </StyledTableRow>
+              </TableRow>
             ))}
           </TableBody>
         </MuiTable>
