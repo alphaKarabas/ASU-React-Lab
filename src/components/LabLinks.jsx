@@ -1,18 +1,27 @@
 import React from 'react';
 import { Grid, Card, CardContent, Typography, CardMedia } from '@mui/material';
 import { Link } from 'react-router-dom';
-import hooksImage from '../../images/hooks.png';
-import formsImage from '../../images/forms.png';
+import darkHooksImage from '../../images/dark_hooks.png';
+import darkFormsImage from '../../images/dark_forms.png';
+import lightHooksImage from '../../images/light_hooks.png';
+import lightFormsImage from '../../images/light_forms.png';
+import { useTheme } from '../components/CustomThemeProvider';
 
 function LabLinks() {
-    const cards = [
-        { title: "Примеры хуков", image: hooksImage, link: "/Lab_4" },
-        { title: "Формы", image: formsImage, link: "/Lab_5-6" }
+    const { theme } = useTheme();
+    const lightCards = [
+        { title: "Примеры хуков", image: lightHooksImage, link: "/Lab_4" },
+        { title: "Формы", image: lightFormsImage, link: "/Lab_5-6" }
+    ];
+
+    const darkCards = [
+        { title: "Примеры хуков", image: darkHooksImage, link: "/Lab_4" },
+        { title: "Формы", image: darkFormsImage, link: "/Lab_5-6" }
     ];
 
     return (
         <Grid container spacing={2}>
-            {cards.map((card, index) => (
+            {(theme === 'dark' ? darkCards : lightCards).map((card, index) => (
                 <Grid item xs={12} sm={6} key={index}>
                     <Link to={card.link} style={{ textDecoration: 'none' }}>
                         <Card>

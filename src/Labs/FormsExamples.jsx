@@ -1,21 +1,12 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 import LabTitle from "../components/LabTitle";
 import TaskSection from "../components/TaskSection";
 import TaskGrid from "../components/TaskGrid";
 import RegistrationForm from "../components/RegistrationForm";
 import LoginForm from "../components/LoginForm";
 import CommentForm from "../components/CommentForm";
-import { auth } from '../store/UserSlice';
-import Comments from '../components/Comments';
 
 export default function Lab_5() {
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(auth());
-    }, [dispatch]);
-
     return (
         <>
             <LabTitle title='Формы' />
@@ -27,7 +18,6 @@ export default function Lab_5() {
                 </TaskGrid>
             </TaskSection>
             <TaskSection title='Комментарии пользователя'>
-                <Comments />
             </TaskSection>
         </>
     );

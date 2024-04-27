@@ -1,0 +1,11 @@
+.table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+  }
+  
+  .fixed-first-column th:first-child, .fixed-first-column td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: white;
+    z-index: 1;
+  }

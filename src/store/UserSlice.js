@@ -52,6 +52,7 @@ export const login = createAsyncThunk(
 export const auth = createAsyncThunk(
   "auth/fetchUser",
   async (_, { rejectWithValue }) => {
+    if (!localStorage.getItem("JWT_Token")) return rejectWithValue('No JWT token');
     try {
       const response = await axios.get(
         `http://localhost:5000/api/auth/auth`,

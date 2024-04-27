@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Drawer, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
-import { Toolbar, Typography, IconButton } from "@mui/material";
+import { Toolbar, Typography } from "@mui/material";
 
 function SideBar({ isOpen, toggleDrawer }) {
   return (
@@ -32,6 +32,11 @@ function SideBar({ isOpen, toggleDrawer }) {
           <ListItem key='Lab 5-6' disablePadding onClick={toggleDrawer(false)}>
             <ListItemButton component={Link} to='/Lab_5-6'>
               <ListItemText primary='Формы' />
+            </ListItemButton>
+          </ListItem>
+          <ListItem key='Lab 8' disablePadding onClick={toggleDrawer(false)}>
+            <ListItemButton component={Link} to='/Lab_8'>
+              <ListItemText primary='Таблицы' />
             </ListItemButton>
           </ListItem>
       </List>
