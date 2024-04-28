@@ -1,3 +1,4 @@
+import React, { useState, useRef, memo, useMemo } from "react";
 import {
   Paper,
   Table as MuiTable,
@@ -5,8 +6,10 @@ import {
   TableRow,
   TableCell,
   TableBody,
+  CircularProgress,
+  Alert,
+  Box
 } from "@mui/material";
-import { useState, useRef, memo, useMemo } from "react";
 import { useVirtualizer } from '@tanstack/react-virtual';
 
 export const columns = [
@@ -22,20 +25,21 @@ export const columns = [
 
 const Table = ({
   data,
+  isFetching,
+  isError,
+  error,
 }) => {
-
-
   const parentRef = useRef();
   const [sortConfig, setSortConfig] = useState(null);
 
   const sortedData = useMemo(() => {
     if (!sortConfig) return data;
-    const sortedData = [...data].sort((a, b) => {
+    const sorted = [...data].sort((a, b) => {
       if (a[sortConfig.key] < b[sortConfig.key]) return sortConfig.direction === 'ascending' ? -1 : 1;
       if (a[sortConfig.key] > b[sortConfig.key]) return sortConfig.direction === 'ascending' ? 1 : -1;
       return 0;
     });
-    return sortedData;
+    return sorted;
   }, [data, sortConfig]);
 
   const handleSort = (key) => {
@@ -53,6 +57,22 @@ const Table = ({
     overscan: 5,
   });
 
+  if (isError) {
+    return (
+      <Box padding={3}>
+        <Alert severity="error">{error?.data?.message || "An error occurred while fetching data."}</Alert>
+      </Box>
+    );
+  }
+
+  if (isFetching) {
+    return (
+      <Box display="flex" justifyContent="center" alignItems="center" minHeight="400px">
+        <CircularProgress />
+      </Box>
+    );
+  }
+
   return (
     <Paper>
       <div ref={parentRef} style={{ overflow: 'auto', maxHeight: '400px' }}>
@@ -67,7 +87,7 @@ const Table = ({
                   scope="col"
                 >
                   {column.header}
-                  {sortConfig?.key == column.accessorKey ? (sortConfig.direction > 'ascending' ? '  🔼' : '  🔽') : '  🔼'}
+                  {sortConfig?.key === column.accessorKey ? (sortConfig.direction === 'ascending' ? '  🔼' : '  🔽') : null}
                 </TableCell>
               ))}
             </TableRow>
@@ -95,4 +115,5 @@ const Table = ({
     </Paper>
   );
 };
+
 export default memo(Table);

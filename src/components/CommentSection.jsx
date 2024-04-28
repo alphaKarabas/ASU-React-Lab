@@ -14,9 +14,7 @@ const CommentSection = () => {
     isError,
     error,
     refetch,
-  } = useGetCommentsQuery(undefined, {
-    skip: !isAuth,
-  });
+  } = useGetCommentsQuery();
 
   useEffect(() => {
     if (isAuth) {
